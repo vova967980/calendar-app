@@ -1,0 +1,21 @@
+@use './../../styles/modules/variables';
+
+.navigation{
+    position: relative;
+    background-color: variables.$primary-color;
+}
+
+.currentNextPrev{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+.navigation>div>*{
+    cursor: pointer;
+}
+
+.weekMonth{
+    display: flex;
+    justify-content: center;
+}
