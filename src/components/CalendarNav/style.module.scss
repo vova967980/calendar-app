@@ -1,14 +1,23 @@
-@use './../../styles/modules/variables';
+@import './../../styles/modules/variables';
+
+%center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .navigation{
     position: relative;
-    background-color: variables.$primary-color;
+    background-color: $primary-color;
+    &>*{
+        @extend %center;
+    }
 }
 
 .currentNextPrev{
     display: flex;
     justify-content: space-between;
-    margin: 0 16px;
+    padding: 10px 16px;
 }
 
 .navigation>div>*{
@@ -18,4 +27,6 @@
 .weekMonth{
     display: flex;
     justify-content: center;
+    padding: 6px 0;
 }
+

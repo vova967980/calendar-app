@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import style from './style.module.scss'
+import ButtonGo from '../ButtonGo'
+import ButtonOpenNav from '../ButtonOpenNav'
+import SwitchModeButton from '../SwitchModeButton'
 
 class CalendarNav extends Component {
   constructor (props) {
@@ -14,7 +17,7 @@ class CalendarNav extends Component {
 
   modeClick(){
     this.setState(state=>({
-      isOpen: !this.state.isOpen
+      isOpen: !state.isOpen
     }));
   }
 
@@ -33,15 +36,15 @@ class CalendarNav extends Component {
       <>
         <nav className={style.navigation}>
           <div className={style.currentNextPrev}>
-            <div>prev</div>
-            <div onClick={this.modeClick}>current</div>
-            <div>next</div>
+            <ButtonGo />
+            <ButtonOpenNav modeClick={this.modeClick}/>
+            <ButtonGo />
           </div>
 
 
           {this.state.isOpen && <div className={style.weekMonth} >
-            <div>week</div>
-            <div>month</div>
+            <SwitchModeButton />
+            <SwitchModeButton />
           </div>}
         </nav>
       </>

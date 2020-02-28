@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-
 import style from './style.module.scss'
 
-
-class ButtonGo extends Component{
+class ButtonOpenNav extends Component{
   constructor (props) {
     super(props)
     this.state={
@@ -14,13 +12,12 @@ class ButtonGo extends Component{
   render () {
 
     return (
-      <div className={style.buttonGo} >
-        MAY
+      <div className={style.currentMonth} onClick={this.props.modeClick}>
+        currentMonth
       </div>
     )
 
   }
-
 }
 
-export default ButtonGo
+export default ButtonOpenNav
